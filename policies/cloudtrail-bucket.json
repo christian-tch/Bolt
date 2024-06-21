@@ -1,0 +1,15 @@
+{    
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyAccessDisbales3PAB",
+      "Effect": "Deny",
+      "Action": [
+        "s3:PutBucketPublicAccessBlock"
+      ],
+      "Resource": [
+        "arn:aws:s3:::${BucketName}"
+      ]
+    }
+  ]
+}

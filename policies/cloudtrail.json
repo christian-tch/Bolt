@@ -1,0 +1,20 @@
+{    
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyAccessDisbaleCloudtrail",
+      "Effect": "Deny",
+      "Action": [
+        "cloudtrail:stopLogging"
+      ],
+      "Resource": [
+        "arn:aws:cloudtrail:eu-west-1:${RootAccountId}:trail/*"
+      ],
+      "Condition": {
+        "StringNotLike": {
+          "aws:PrincipalAccount":"${RootAccountId}"
+        }
+      }
+    }
+  ]
+}
